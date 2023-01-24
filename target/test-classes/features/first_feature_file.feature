@@ -6,14 +6,12 @@ Feature: first feature file
 
   @iphone_search
   Scenario: TC_01_first_scenario
-    Given user is on the google home page
     When user search for Iphone
     Then verify page title contains Iphone
     Then close the application
 
   @teapot_search
    Scenario: TC_02_teapot_search
-     Given user is on the google home page
      When user search for Teapot
      Then verify page title contains Teapot
      Then close the application
