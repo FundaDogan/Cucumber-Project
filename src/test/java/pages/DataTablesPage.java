@@ -8,6 +8,7 @@ import utilities.Driver;
 public class DataTablesPage {
 
     public DataTablesPage(){
+
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
