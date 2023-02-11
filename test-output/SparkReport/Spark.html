@@ -11,7 +11,7 @@
 <link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
 <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
-<style type="text/css"></style></head><body class="spa -report dark">
+<style type="text/css"></style></head><body class="spa bdd-report dark">
   <div class="app">
     <div class="layout">
 <div class="header navbar">
@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Smoke Test Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Feb. 5, 2023 08:52:43 p.m.</span></a>
+<a href="#"><span class="badge badge-primary">Feb. 10, 2023 09:57:09 p.m.</span></a>
 </li>
 </ul>
 </div>
@@ -52,6 +52,16 @@
 <span class="ico"><i class="fa fa-list"></i></span>
 </a>
 </li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
+</a>
+</li>
 </ul>
 </div>
 </div>      <div class="vcontainer">
@@ -61,33 +71,33 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Feb. 5, 2023 08:52:43 p.m.</h3>
+<h3>Feb. 10, 2023 09:57:09 p.m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Feb. 5, 2023 08:52:45 p.m.</h3>
+<h3>Feb. 10, 2023 09:58:32 p.m.</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
-<p class="m-b-0 text-pass">Tests Passed</p>
+<p class="m-b-0 text-pass">Features Passed</p>
 <h3>0</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
-<p class="m-b-0 text-fail">Tests Failed</p>
-<h3>0</h3>
+<p class="m-b-0 text-fail">Features Failed</p>
+<h3>1</h3>
 </div></div>
 </div>
 </div>
 <div class="row">
-<div class="col-md-6">
+<div class="col-md-4">
 <div class="card">
 <div class="card-header">
-<h6 class="card-title">Tests</h6>
+<h6 class="card-title">Features</h6>
 </div>
 <div class="card-body">
 <div class="">
@@ -96,12 +106,52 @@
 </div>
 <div class="card-footer">
 <div><small data-tooltip='0%'>
-<b>0</b> tests passed
+<b>0</b> features passed
 </small>
 </div>
 <div>
-<small data-tooltip='0%'><b>0</b> tests failed,
+<small data-tooltip='100%'><b>1</b> features failed,
 <b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Scenarios</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='child-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='0%'><b>0</b> scenarios passed</small></div>
+<div>
+<small data-tooltip='100%'><b>4</b> scenarios failed,
+<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-4">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Steps</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='grandchild-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='80%'><b>64</b> steps passed</small></div>
+<div>
+<small data-tooltip='5%'><b>4</b> steps failed,
+<b>12</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -117,9 +167,27 @@
 </div></div>
 <script>
 var timeline = {
+"medunna_room_creation":80.678
 };
 </script>
 <div class="row">
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>@MedunnaRoom</td>
+<td>0</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
 <div class="col-lg-6 col-md-12 sysenv-container">
 <div class="card">
 <div class="card-header"><p>System/Environment</p></div>
@@ -140,27 +208,22 @@ var timeline = {
 var statusGroup = {
 parentCount: 5,
 passParent: 0,
-failParent: 0,
+failParent: 1,
 warningParent: 0,
 skipParent: 0,
 childCount: 5,
 passChild: 0,
-failChild: 0,
+failChild: 4,
 warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 0,
-failGrandChild: 0,
+passGrandChild: 64,
+failGrandChild: 4,
 warningGrandChild: 0,
-skipGrandChild: 0,
+skipGrandChild: 12,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 0,
-failEvents: 0,
-warningEvents: 0,
-skipEvents: 0,
-infoEvents: 0
 };
 </script><div class="test-wrapper row view test-view">
   <div class="test-list">
@@ -172,13 +235,659 @@ infoEvents: 0
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">@MedunnaRoom</a>
 </ul>
 </li>
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
+        <li class="test-item"  status="fail" test-id="1"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">medunna_room_creation</p>
+            <p class="text-sm">
+              <span>9:57:11 p.m.</span> / <span>00:01:20:678</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">medunna_room_creation</h5>
+<span class='badge badge-success'>02.10.2023 9:57:11 p.m.</span>
+<span class='badge badge-danger'>02.10.2023 9:58:32 p.m.</span>
+<span class='badge badge-default'>00:01:20:678</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-10 m-l-5"></div>
+</div>
+</div>
+<div class="accordion mt-4">
+  <div class="card">
+    <div class="card-header" role="tab">
+      <div class="card-title">
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Create Room</div>
+          <div class="status-avatar float-right mr-4">
+            <i class="fa fa-paperclip"></i>
+          </div>
+      </div>
+    </div>
+        <div class="scenario_outline ">
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="3"><span class="badge log fail-bg mr-2">Fail</span>Create Room</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given user is on "https://medunna.com" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user click on user icon</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user click on Signin option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "john_doe" in Username input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "John.123" in Password input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Remember Me checkbox</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Sign in button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Items&Titles</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Room Option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Create a new room button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "123"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And select Suite option from Room Type dropdown</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Status checkbox</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "1000" in Price input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "Good" in description input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>And click on save button</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (355, 726)
+  (Session info: chrome=109.0.5414.120)
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b0ba8080af5aaf1d9ecddda48863edd5, clickElement {id=c71efbf0-6651-4f75-8e56-62e5c1354947}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\funda\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53081}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53081/devtoo..., se:cdpVersion: 109.0.5414.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (b0ba8080af5aaf1d9ecddda48863edd5)] -> id: save-entity]
+Session ID: b0ba8080af5aaf1d9ecddda48863edd5
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy25.click(Unknown Source)
+	at stepdefinitions.MedunnaRoomStepDef.click_on_save_button(MedunnaRoomStepDef.java:65)
+	at ✽.click on save button(file:///C:/Users/funda/IdeaProjects/my-cucumber-project/./src/test/resources/features/medunna_room.feature:24)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And click on Created Date</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then assert that room is created via "123"</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And close the application</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.tearDownScenario(io.cucumber.java.Scenario)</span>
+      <div>failed_scenarioCreate Room
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded1.png' src="../embedded1.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="25"><span class="badge log fail-bg mr-2">Fail</span>Create Room</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given user is on "https://medunna.com" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user click on user icon</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user click on Signin option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "john_doe" in Username input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "John.123" in Password input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Remember Me checkbox</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Sign in button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Items&Titles</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Room Option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Create a new room button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "102"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And select Suite option from Room Type dropdown</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Status checkbox</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "1200" in Price input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "Cool" in description input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>And click on save button</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (355, 726)
+  (Session info: chrome=109.0.5414.120)
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [164e19a02f2300ea71a4f365dcb81a96, clickElement {id=c7db1840-2756-4247-a18b-981c1c410598}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\funda\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53116}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53116/devtoo..., se:cdpVersion: 109.0.5414.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (164e19a02f2300ea71a4f365dcb81a96)] -> id: save-entity]
+Session ID: 164e19a02f2300ea71a4f365dcb81a96
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy25.click(Unknown Source)
+	at stepdefinitions.MedunnaRoomStepDef.click_on_save_button(MedunnaRoomStepDef.java:65)
+	at ✽.click on save button(file:///C:/Users/funda/IdeaProjects/my-cucumber-project/./src/test/resources/features/medunna_room.feature:24)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And click on Created Date</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then assert that room is created via "102"</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And close the application</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.tearDownScenario(io.cucumber.java.Scenario)</span>
+      <div>failed_scenarioCreate Room
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded2.png' src="../embedded2.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="47"><span class="badge log fail-bg mr-2">Fail</span>Create Room</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given user is on "https://medunna.com" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user click on user icon</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user click on Signin option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "john_doe" in Username input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "John.123" in Password input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Remember Me checkbox</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Sign in button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Items&Titles</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Room Option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Create a new room button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "114"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And select Suite option from Room Type dropdown</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Status checkbox</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "1100" in Price input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "Perfect" in description input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>And click on save button</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (355, 726)
+  (Session info: chrome=109.0.5414.120)
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [2366eaa42a89ce9413fb735652d95851, clickElement {id=abe16010-840d-4211-8a73-147e9111c8fe}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\funda\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53151}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53151/devtoo..., se:cdpVersion: 109.0.5414.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (2366eaa42a89ce9413fb735652d95851)] -> id: save-entity]
+Session ID: 2366eaa42a89ce9413fb735652d95851
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy25.click(Unknown Source)
+	at stepdefinitions.MedunnaRoomStepDef.click_on_save_button(MedunnaRoomStepDef.java:65)
+	at ✽.click on save button(file:///C:/Users/funda/IdeaProjects/my-cucumber-project/./src/test/resources/features/medunna_room.feature:24)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And click on Created Date</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then assert that room is created via "114"</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And close the application</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.tearDownScenario(io.cucumber.java.Scenario)</span>
+      <div>failed_scenarioCreate Room
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded3.png' src="../embedded3.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+            <div class="card-body l1">
+              <div class="card-header">
+                <div class="card-title outline-child">
+                  <div class="node" id="69"><span class="badge log fail-bg mr-2">Fail</span>Create Room</div>
+                    <div class="status-avatar float-right">
+                      <i class="fa fa-paperclip"></i>
+                    </div>
+                </div>
+              </div>
+              <div class="card-body mt-3 ">
+                  <div class="step pass-bg">
+                    <span>Given user is on "https://medunna.com" page</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>When user click on user icon</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And user click on Signin option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "john_doe" in Username input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "John.123" in Password input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Remember Me checkbox</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Sign in button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Items&Titles</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Room Option</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Create a new room button</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "135"</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And select Suite option from Room Type dropdown</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And click on Status checkbox</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "1000" in Price input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>And enter "Well" in description input</span>
+      <div>
+      </div>
+                  </div>
+                  <div class="step fail-bg">
+                    <span>And click on save button</span>
+      <div>
+        <textarea disabled class="code-block">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element is not clickable at point (355, 726)
+  (Session info: chrome=109.0.5414.120)
+Build info: version: '4.7.2', revision: '4d4020c3b7'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [15069e6ff42becd5b7f8f02745898c42, clickElement {id=3d957f43-6f12-4a8e-b61d-df9f09f68dc6}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.120, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\funda\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:53180}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:53180/devtoo..., se:cdpVersion: 109.0.5414.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (15069e6ff42becd5b7f8f02745898c42)] -> id: save-entity]
+Session ID: 15069e6ff42becd5b7f8f02745898c42
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:490)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:535)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at jdk.internal.reflect.GeneratedMethodAccessor58.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:52)
+	at com.sun.proxy.$Proxy25.click(Unknown Source)
+	at stepdefinitions.MedunnaRoomStepDef.click_on_save_button(MedunnaRoomStepDef.java:65)
+	at ✽.click on save button(file:///C:/Users/funda/IdeaProjects/my-cucumber-project/./src/test/resources/features/medunna_room.feature:24)
+</textarea>
+      
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And click on Created Date</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>Then assert that room is created via "135"</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step skip-bg">
+                    <span>And close the application</span>
+      <div>Step skipped
+      </div>
+                  </div>
+                  <div class="step pass-bg">
+                    <span>hooks.Hooks.tearDownScenario(io.cucumber.java.Scenario)</span>
+      <div>failed_scenarioCreate Room
+          <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='../embedded4.png' src="../embedded4.png">
+    
+    </div></div>
+</div>
+      <div>
+      </div>
+                  </div>
+              </div>
+            </div>
+        </div>
+  </div>
+</div>
+          </div>
+        </li>
       </ul>
     </div>
   </div>
@@ -188,7 +897,181 @@ infoEvents: 0
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-        </div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>5</span>
+</span>
+<p class="name">@MedunnaRoom</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@MedunnaRoom</h4>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>21:57:11 p.m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Create Room</a>
+<div class="">
+<span class="badge badge-default">medunna_room_creation.Create Room</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>21:57:11 p.m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='3'>Create Room</a>
+<div class="">
+<span class="badge badge-default">medunna_room_creation.Create Room</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>21:57:37 p.m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='25'>Create Room</a>
+<div class="">
+<span class="badge badge-default">medunna_room_creation.Create Room</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>21:57:58 p.m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='47'>Create Room</a>
+<div class="">
+<span class="badge badge-default">medunna_room_creation.Create Room</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>21:58:15 p.m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='69'>Create Room</a>
+<div class="">
+<span class="badge badge-default">medunna_room_creation.Create Room</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>4</span>
+</span>
+<p class="name">org.openqa.selenium.ElementClickInterceptedException</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>org.openqa.selenium.ElementClickInterceptedException</h4>
+<span status="fail" class='badge log badge-danger'>4 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>21:57:35 p.m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='20'>And click on save button</a>
+<div class="">
+<span class="badge badge-default">medunna_room_creation.Create Room.And click on save button</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>21:57:56 p.m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='42'>And click on save button</a>
+<div class="">
+<span class="badge badge-default">medunna_room_creation.Create Room.And click on save button</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>21:58:13 p.m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='64'>And click on save button</a>
+<div class="">
+<span class="badge badge-default">medunna_room_creation.Create Room.And click on save button</span>
+</div>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>21:58:30 p.m.</td>
+<td>
+<a href="#" class="linked" test-id='1' id='86'>And click on save button</a>
+<div class="">
+<span class="badge badge-default">medunna_room_creation.Create Room.And click on save button</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
       </div>
     </div>
   </div>
