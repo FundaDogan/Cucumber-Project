@@ -18,17 +18,21 @@ public class DatabaseStepDefinitions {
 
     @Given("user gets the column {string} from table {string}")
     public void user_gets_the_column_from_table(String column, String table) {
+
 //        String query = "SELECT * FROM jhi_user";//HARD CODED
         String query = "SELECT "+column+" FROM "+table+" Order By Id";//DYNAMIC QUERY
+
 //        Running the query using util class
         DBUtils.executeQuery(query);
     }
     @Then("user reads all the column {string} data")
     public void user_reads_all_the_column_data(String column) throws Exception {
+
 //        Using result set, get teh objects from the database
         DBUtils.getResultset().next();//going to the next row
         Object object1 = DBUtils.getResultset().getObject(column);//getObject is used to get the database objects
         System.out.println(object1);
+
 //        -----------
         DBUtils.getResultset().next();//going to the next row
         Object object2=DBUtils.getResultset().getObject(column);
@@ -58,8 +62,10 @@ public class DatabaseStepDefinitions {
 
     @Then("verify table {string} and column {string} contains data {string}")
     public void verify_table_and_column_contains_data(String table, String column, String data) {
+
 //        getting to the table
         String query ="SELECT "+column+" FROM "+table;
+
 //        getting all of the column data and storing in a list
         List<Object> columnData = DBUtils.getColumnData(query,column);
         System.out.println(columnData);
